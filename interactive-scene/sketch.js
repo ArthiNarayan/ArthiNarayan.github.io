@@ -1,21 +1,26 @@
 // Interactive Scene
 // PUT HEADER
 
-let startScreen = true;
+let start = true;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  background(220);
-  start();
+  swapState();
 }
 
-function start
-if (start) {
-  // all code
+function swapState() {
+  if (start === true) {
+    background("5BB450");
+  }
 }
 
-else {
+// function startScreen
+// if (start) {
+//   // all code
+// }
 
-}
+// else {
+
+// }
