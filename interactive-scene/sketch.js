@@ -13,6 +13,10 @@ function setup() {
 }
 
 function draw() {
+  // if (state === start) {
+  //show start screen
+  //else 
+   //normal stuff so all these other fucntions
   swapState();
   image(circlecat, 20, 20, circlecat.width * 0.25, circlecat.height * 0.25);
 }
