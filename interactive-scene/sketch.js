@@ -1,8 +1,10 @@
 // Interactive Scene
 // PUT HEADER/add commets/check about citations/ectra for experts//sound effect for clicking buttons and changing asnwer
 
+// Set state to enable start screen
 let state = "start";
 
+// Set image variables 
 let circleCat; 
 let cows;
 let animal;
@@ -13,11 +15,15 @@ let stars;
 let animalQuiz;
 let plantQuiz;
 
+// Set cell diagram answers to be empty
 let answer = "";
 
+// Set font for cell diagram answers
 let answerFont;
 
+// Set background music
 let answerSound;
+
 
 let soundtrack;
 let muteButton;
@@ -34,7 +40,7 @@ function preload() {
   meowcrobiology2 = loadImage("meowcrobiology2.png");
   stars = loadImage("stars.jpg");
   animalQuiz = loadImage("animalquiz.png");
-  plantQuiz = loadImage("plantquiz.png")
+  plantQuiz = loadImage("plantquiz.png");
 
   answerFont = loadFont("Simple Cake.otf");
 
@@ -45,7 +51,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  muteButton = createButton('MUSIC');
+  muteButton = createButton("MUSIC");
   muteButton.position(1220, 30); // Position the button on the canvas
   muteButton.mousePressed(muteTrack);
 }
@@ -55,7 +61,7 @@ function draw() {
 
   textSize(80); 
   textFont(answerFont); 
-  fill("pink")
+  fill("pink");
   text(answer, 785, windowHeight/2);
 }
 
@@ -107,55 +113,55 @@ function plantCell() {
 
 function keyPressed() {
   if (answerSound.isLoaded()) {
-      answerSound.play(); 
+    answerSound.play(); 
   }
   // dgsfdg
   if (state === "animal cell") {
-    if (key === 'k' || key === 'K') {
+    if (key === "k" || key === "K") {
       answer = "Lysosomes";
     } 
-    else if (key === 'l' || key === 'L') {
+    else if (key === "l" || key === "L") {
       answer = "Vacuole";
     }
-    else if (key === 'm' || key === 'M') {
-        answer = "Centrosome";
-      } 
-    else if (key === 'n' || key === 'N') {
-        answer = "Nucleolus";
+    else if (key === "m" || key === "M") {
+      answer = "Centrosome";
+    } 
+    else if (key === "n" || key === "N") {
+      answer = "Nucleolus";
     } 
     else {
       answer = ""; // Clear word for other keys
     }
   }
   else if (state === "plant cell") {
-    if (key === 'a' || key === 'A') {
+    if (key === "a" || key === "A") {
       answer = "Mitochondrion";
     } 
-    else if (key === 'b' || key === 'B') {
+    else if (key === "b" || key === "B") {
       answer = "Ribosomes";
     } 
-    else if (key === 'c' || key === 'C') {
+    else if (key === "c" || key === "C") {
       answer = "Nucleus";
     }
-    else if (key === 'd' || key === 'D') {
-        answer = "Smooth ER";
+    else if (key === "d" || key === "D") {
+      answer = "Smooth ER";
     } 
-    else if (key === 'e' || key === 'E') {
-        answer = "Golgi";
+    else if (key === "e" || key === "E") {
+      answer = "Golgi";
     }
-    else if (key === 'f' || key === 'F') {
+    else if (key === "f" || key === "F") {
       answer = "Cell Membrane";
     }
-    else if (key === 'g' || key === 'G') {
-        answer = "Vacuole";
+    else if (key === "g" || key === "G") {
+      answer = "Vacuole";
     } 
-    else if (key === 'h' || key === 'H') {
-        answer = "Cell Wall";
+    else if (key === "h" || key === "H") {
+      answer = "Cell Wall";
     }
-    else if (key === 'i' || key === 'I') {
+    else if (key === "i" || key === "I") {
       answer = "Chloroplasts";
     }
-    else if (key === 'j' || key === 'J') {
+    else if (key === "j" || key === "J") {
       answer = "Filaments";
     }
     else {
