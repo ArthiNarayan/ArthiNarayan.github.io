@@ -21,5 +21,5 @@ function mandala_pattern {
 }
 
 function spawnCircle() {
-  
+  circle(50, 50, 250)
 }
