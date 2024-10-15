@@ -2,12 +2,13 @@
 
 ## Demos
 - [Moving Square](moving-square)
-- [Image Demo]
+- [Image Demo](image-demo)
 - [Traffic Light](traffic-light)
 - [Bouncing Balls](bouncing-balls)
 - [Generative Art](art)
 - [Perlin Noise Ball](perlin)
 - [Terrain Generation](terrain)
+- [Bubble Object Demo] (bubble)
 
 ## Projects
 - [Interactive Scene](interactive-scene)
