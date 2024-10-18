@@ -20,7 +20,7 @@ function draw() {
   pop(); //reset to the push version
 
   fill("pink");
-  rect(width/2, height - 200, width * 2, 400)
+  rect(width/2, height - 200, width * 2, 400);
 }
 
 
