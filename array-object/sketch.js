@@ -3,7 +3,9 @@
 // October 21st, 2024
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// map() --> used to vary size of mandala layers
+// sin()/cos() --> used to position mandala in a circular shape
+// bezierVertex() --> used to add Bézier curve segments to mandala
 
 // Create array to store properties of mandala patterns
 let mandalaPatterns = [];
