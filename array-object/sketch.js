@@ -8,7 +8,7 @@
 // Create array to store properties of mandala patterns
 let mandalaPatterns = [];
 
-// Set layers in mandala to be five
+// Set layers of mandala to be five
 let mandalaLayers = 5;
 
 function setup() {
@@ -20,7 +20,7 @@ function setup() {
 }
 
 function draw() {
-  // Set background to be black
+  // Sets background to be black
   background(0);
 
   // Centers the mandala
@@ -31,7 +31,6 @@ function draw() {
 
 // Set up patterns for mandala
 function initializeMandalaPatterns() {
-  
   // Creates each layer of mandala
   for (let layer = 0; layer < mandalaLayers; layer++) {
     // Random number of patterns for each layer
@@ -47,7 +46,7 @@ function initializeMandalaPatterns() {
         // As the layer number increases, its size will increase from 100 pixels to 300 pixels
         size: map(layer, 0, mandalaLayers - 1, 100, 300), 
         // Patterns will be random pastel colours
-        color: color(random(150, 255), random(150, 255), random(150, 255))
+        color: color(random(200, 255), random(200, 255), random(200, 255)),
         // Tracks layer number
         layer: layer 
       });
@@ -62,3 +61,43 @@ function drawMandala() {
     drawPatterns(pattern); 
   }
 }
+
+// Draws the patterns of the mandala
+function drawPatterns(pattern) {
+  // Allows for transformations to only affect code between push() and pop()
+  push();
+  
+  // Set characteristics of pattern
+  rotate(pattern.angle); 
+  stroke(pattern.color);
+  strokeWeight(2);
+  noFill();
+
+  // Begins adding vertices to pattern
+  beginShape();
+  
+  // Calculates each vertex's position using the shape's radius to position it evenly around a circle
+  for (let j = 0; j < TWO_PI; j += TWO_PI / 10) {
+    // Calculates x and y coordinates for first and last vertex of pattern
+    let x = pattern.size * cos(j);
+    let y = pattern.size * sin(j);
+    
+    // Defines first and last vertex
+    vertex(x, y);
+    
+    // Create bezier curves with random control points
+    let controlX1 = pattern.size * 0.5 * cos(j) + random(-10, 10);
+    let controlY1 = pattern.size * 0.5 * sin(j) + random(-10, 10);
+    let controlX2 = pattern.size * 0.9 * cos(j) + random(-10, 10);
+    let controlY2 = pattern.size * 0.9 * sin(j) + random(-10, 10);
+    
+    // Defines bezier curve
+    bezierVertex(controlX1, controlY1, controlX2, controlY2, x, y);
+  }
+  
+  // Finishes pattern by connecting all vertices
+  endShape(CLOSE);
+  
+  pop();
+}
+
