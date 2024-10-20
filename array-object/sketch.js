@@ -15,7 +15,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
   
-  // Initialize mandala patterns
+  // Create layers and patterns of mandala
   initializeMandalaPatterns();
 }
 
@@ -23,6 +23,10 @@ function draw() {
   // Set background to be black
   background(0);
 
+  // Centers the mandala
+  translate(width/2, height/2);
+
+  drawMandala();
 }
 
 // Set up patterns for mandala
@@ -48,5 +52,13 @@ function initializeMandalaPatterns() {
         layer: layer 
       });
     }
+  }
+}
+
+// Draws the entire mandala
+function drawMandala() {
+  for (let pattern of mandalaPatterns) {
+    // Draws each indvidual pattern
+    drawPatterns(pattern); 
   }
 }
