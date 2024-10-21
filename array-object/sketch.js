@@ -18,7 +18,7 @@ function setup() {
   noStroke();
   
   // Create layers and patterns of mandala
-  initializeMandalaPatterns();
+  initializeMandala();
 }
 
 function draw() {
@@ -31,8 +31,8 @@ function draw() {
   drawMandala();
 }
 
-// Set up patterns for mandala
-function initializeMandalaPatterns() {
+// Sets up layers and patterns for mandala
+function initializeMandala() {
   // Creates each layer of mandala
   for (let layer = 0; layer < mandalaLayers; layer++) {
     // Random number of patterns for each layer
@@ -40,11 +40,11 @@ function initializeMandalaPatterns() {
     // Calculate the angle offset for placing patterns evenly around the mandala
     let angleOffset = TWO_PI / patternCount; 
 
-    // Creates pattern for each layer
+    // Defines pattern properties
     for (let i = 0; i < patternCount; i++) {
       mandalaPatterns.push({
         // Ensures patterns are evenly-spaced and positioned slightly differently from ones in other layers
-        angle: i * angleOffset + (layer * 0.1),
+        angle: i * angleOffset + layer * 0.1,
         // As the layer number increases, its size will increase from 100 pixels to 300 pixels
         size: map(layer, 0, mandalaLayers - 1, 100, 300), 
         // Patterns will be random pastel colours
@@ -87,13 +87,13 @@ function drawPatterns(pattern) {
     // Defines first and last vertex
     vertex(x, y);
     
-    // Create bezier curves with random control points
+    // Sets up random control points for bézier
     let controlX1 = pattern.size * 0.5 * cos(j) + random(-10, 10);
     let controlY1 = pattern.size * 0.5 * sin(j) + random(-10, 10);
     let controlX2 = pattern.size * 0.9 * cos(j) + random(-10, 10);
     let controlY2 = pattern.size * 0.9 * sin(j) + random(-10, 10);
     
-    // Defines bezier curve
+    // Creates bézier curve
     bezierVertex(controlX1, controlY1, controlX2, controlY2, x, y);
   }
   
