@@ -7,7 +7,7 @@
 - [Bouncing Balls](bouncing-balls)
 - [Generative Art](art)
 - [Perlin Noise Ball](perlin)
-- [Terrain Generation](terrain)
+- [Te\\-=rrain Generation](terrain)
 - [Bubble Object Demo] (bubble)
 - [Translate and Rotate](rotate)
 - [Grid Demo](grid)
