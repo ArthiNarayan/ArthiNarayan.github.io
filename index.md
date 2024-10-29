@@ -7,10 +7,12 @@
 - [Bouncing Balls](bouncing-balls)
 - [Generative Art](art)
 - [Perlin Noise Ball](perlin)
-- [Te\\-=rrain Generation](terrain)
+- [Terrain Generation](terrain)
 - [Bubble Object Demo] (bubble)
 - [Translate and Rotate](rotate)
 - [Grid Demo](grid)
+- [Game of Life](game-of-life)
+- [Rectangle Grid](rectangle-grid)
 
 ## Projects
 - [Interactive Scene](interactive-scene)
