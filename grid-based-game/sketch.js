@@ -17,6 +17,9 @@ function preload() {
   // Load all image files
   ancient = loadImage("ancient.avif");
 
+  // Load font files // remember to get dafont
+  startFont = loadFont("Simple Cake.otf");
+
 }
 
 

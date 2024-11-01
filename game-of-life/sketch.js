@@ -91,7 +91,7 @@ function keyPressed() {
     grid = updateGrid();
   }
   if (key === "a") {
-    autoPlayisOn = !autoPlayisOn;
+    autoPlayisOn = !autoPlayisOn;   
   }
   if (key === "g") {
     grid = gosperGun;
