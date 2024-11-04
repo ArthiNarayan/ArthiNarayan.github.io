@@ -34,6 +34,9 @@ function draw() {
 function startScreen() {
   // Displays start screen images
   image(ancient, 0, 0, windowWidth, windowHeight);
+  // Displays start screen font
+  
+
 
 }
 
