@@ -17,8 +17,8 @@ function preload() {
   // Load all image files
   ancient = loadImage("ancient.avif");
 
-  // Load font files // remember to get dafont
-  startFont = loadFont("Simple Cake.otf");
+  // Load font files
+  startFont = loadFont("MonsterFriendFore.otf");
 
 }
 
@@ -35,6 +35,10 @@ function startScreen() {
   // Displays start screen images
   image(ancient, 0, 0, windowWidth, windowHeight);
   // Displays start screen font
+  textAlign(CENTER);
+  textSize(400); 
+  textFont(startFont); 
+  //fill("pink");
   
 
 
