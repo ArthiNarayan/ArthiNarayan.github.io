@@ -13,6 +13,7 @@ const mancalaHeight = 2;
 let ancient;
 let startFont;
 let play;
+let scroll;
 
 let state = "start";
 
@@ -21,6 +22,7 @@ function preload() {
   // Load all image files
   ancient = loadImage("ancient.avif");
   play = loadImage("play.png");
+  scroll = loadImage("scroll.png");
 
   // Load font files
   //startFont = loadFont("MonsterFriendFore.otf");
@@ -51,7 +53,7 @@ function startScreen() {
   // Displays start screen font;
   // Displays start screen images
   image(ancient, 0, 0, windowWidth, windowHeight);
-  image(play, 600, 290, play.width*2.5, play.height*2.5);
+  image(play, 590, 290, play.width*2.5, play.height*2.5);
 
   if (mouseIsPressed && mouseX > 600 && mouseX < 600 + play.width * 2.5 && mouseY > 290 && mouseY < 290 + play.height * 2.5) {
     state = "instructions"; 
@@ -62,5 +64,5 @@ function startScreen() {
 // instructions screen
 
 function instructionScreen() {
-
+  image(scroll, 0, 0, windowWidth, windowHeight);
 }
