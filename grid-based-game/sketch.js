@@ -3,7 +3,7 @@
 // Date
 //
 // Extra for Experts:
-// - describe what you did to take this project "above and beyond"
+// - describe what you did to take this project "above and beyond" do video fo rinstructions
 
 let mancalaBoard;
 const mancalaWidth = 7;
@@ -47,6 +47,10 @@ function swapState() {
     instructionScreen();
   }
 
+  else if (state === "play") {
+
+  }
+
 }
 
 function startScreen() {
@@ -65,4 +69,9 @@ function startScreen() {
 
 function instructionScreen() {
   image(scroll, 0, 0, windowWidth, windowHeight);
+
+}
+
+function mancala {
+
 }
