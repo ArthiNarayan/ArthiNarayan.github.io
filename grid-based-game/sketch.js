@@ -12,8 +12,14 @@ let startFont;
 let play;
 let scroll;
 
+// Set state variable to enable start screen
 let state = "start";
 
+// Create array for mancala board with 6 pits (4 stones in each) and 1 store for each player
+let mancalaBoard = [
+  [4, 4, 4, 4, 4, 4, 0], // Player 1's pits
+  [4, 4, 4, 4, 4, 4, 0], // Player 2's pits
+];
 
 function preload() {
   // Load all image files
