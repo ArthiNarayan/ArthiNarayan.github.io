@@ -54,7 +54,7 @@ function startScreen() {
   // Displays start screen font;
   // Displays start screen images
   image(ancient, 0, 0, windowWidth, windowHeight);
-  image(play, 500, 290, play.width*2.5, play.height*2.5);
+  image(play, 600, 290, play.width*2.5, play.height*2.5);
 
   if (mouseIsPressed && mouseX > 600 && mouseX < 600 + play.width * 2.5 && mouseY > 290 && mouseY < 290 + play.height * 2.5) {
     state = "instructions"; 
@@ -81,7 +81,7 @@ function instructionScreen() {
   fill(0); // Black text
 
   // Display the title
-  text("Mancala Game Instructions", windowWidth / 2, 50);
+  text("Instructions", 850, 120);
 
   textSize(18);
   textAlign(LEFT, TOP);
@@ -110,12 +110,12 @@ function instructionScreen() {
   `;
   
   // Display the instructions with adjusted box size
-  text(instructions, 50, 100, windowWidth + 60, windowHeight - 150); // Adjust width and height to allow for more space at the bottom
+  text(instructions, 360, 150, windowWidth - 450, windowHeight - 150); // Adjust width and height to allow for more space at the bottom
 
   // Text at the bottom: Click or press space to play
   textSize(16);
   textAlign(CENTER, BOTTOM);
-  text("Click or press space to play", windowWidth / 2, windowHeight - 50);
+  text("Press SPACE to play", 850, windowHeight - 130);
 }
 
 
