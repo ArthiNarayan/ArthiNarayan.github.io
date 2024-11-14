@@ -167,6 +167,22 @@ function drawPit(x, y, marbles) {
   ellipse(x, y, pitRadius * 2);
   fill(0);
   text(marbles, x, y);
+
+  if (mouseIsPressed && dist(mouseX, mouseY, x, y) < pitRadius) {
+    if (!isGameOver && ((y === 100 && playerTurn === 0) || (y === 300 && playerTurn === 1))) {
+      let row;
+      if (y === 100) {
+        row = 0;
+      } 
+      else {
+        row = 1;
+      }
+      let index = (x - pitSpacing) / pitSpacing;
+      if (mancalaBoard[row][index] > 0) {
+        distributeStones(row, index);
+      }
+    }
+  }
 }
 
 // Creates stores
