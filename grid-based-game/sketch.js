@@ -130,6 +130,38 @@ function instructionScreen() {
   text("Press SPACE to play", 850, windowHeight - 130);
 }
 
+// Draw the Mancala game screen
+function drawGame() {
+  background("green");
+  drawBoard();
+  if (isGameOver) {
+    displayWinner();
+  }
+}
+
+// Function to draw the Mancala board
+function drawBoard() {
+  // Draw Top Player's pits (Player 1)
+  for (let i = 0; i < 6; i++) {
+    drawPit(pitSpacing * (i + 1), 100, mancalaBoard[0][i]);
+  }
+
+  // Draw Bottom Player's pits (Player 2)
+  for (let i = 0; i < 6; i++) {
+    drawPit(pitSpacing * (i + 1), 300, mancalaBoard[1][i]);
+  }
+
+  // Draw Stores
+  drawStore(50, 200, mancalaBoard[0][6], "P1");
+  drawStore(750, 200, mancalaBoard[1][6], "P2");
+
+  // Display Player Turn
+  fill(0);
+  textSize(20);
+  text(`Player ${playerTurn + 1}'s Turn`, width / 2, 30);
+}
+
+// Creates pits
 function drawPit(x, y, marbles) {
   fill("grey");
   ellipse(x, y, pitRadius * 2);
@@ -137,7 +169,7 @@ function drawPit(x, y, marbles) {
   text(marbles, x, y);
 }
 
-// Function to draw stores
+// Creates stores
 function drawStore(x, y, marbles, label) {
   fill("grey");
   rect(x - storeWidth / 2, y - 60, storeWidth, 120);
