@@ -12,6 +12,13 @@ let startFont;
 let play;
 let scroll;
 
+// Game variables
+let pitRadius = 40;
+let pitSpacing = 100;
+let storeWidth = 80;
+let playerTurn = 0; // 0 for Player 1, 1 for Player 2
+let isGameOver = false;
+
 // Set state variable to enable start screen
 let state = "start";
 
@@ -32,7 +39,6 @@ function preload() {
 
 }
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
 };
@@ -51,7 +57,7 @@ function swapState() {
   }
 
   else if (state === "play") {
-    // mancala board stuff
+    // mancala board stuff draw game function
   }
 
 }
@@ -122,6 +128,24 @@ function instructionScreen() {
   textSize(16);
   textAlign(CENTER, BOTTOM);
   text("Press SPACE to play", 850, windowHeight - 130);
+}
+
+function drawPit(x, y, marbles) {
+  fill("grey");
+  ellipse(x, y, pitRadius * 2);
+  fill(0);
+  text(marbles, x, y);
+}
+
+// Function to draw stores
+function drawStore(x, y, marbles, label) {
+  fill("grey");
+  rect(x - storeWidth / 2, y - 60, storeWidth, 120);
+  fill(0);
+  textSize(20);
+  text(marbles, x, y);
+  textSize(16);
+  text(label, x, y - 80);
 }
 
 
