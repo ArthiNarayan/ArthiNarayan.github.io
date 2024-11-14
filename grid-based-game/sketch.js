@@ -196,4 +196,35 @@ function drawStore(x, y, marbles, label) {
   text(label, x, y - 80);
 }
 
+// Function to distribute stones from the selected pit
+function distributeStones(row, index) {
+  let marbles = mancalaBoard[row][index];
+  mancalaBoard[row][index] = 0;
+  let currentRow = row;
+  let currentIndex = index;
+
+  while (marbles > 0) {
+    currentIndex++;
+
+    if (currentIndex === 7) {
+      if (currentRow === playerTurn) {
+        mancalaBoard[currentRow][6]++;
+        marbles--;
+        if (marbles === 0) return;
+      }
+      currentRow = 1 - currentRow;
+      currentIndex = 0;
+    }
+
+    mancalaBoard[currentRow][currentIndex]++;
+    marbles--;
+  }
+
+  if (!(currentRow === playerTurn && currentIndex === 6)) {
+    playerTurn = 1 - playerTurn;
+  }
+
+  checkForGameOver();
+}
+
 
