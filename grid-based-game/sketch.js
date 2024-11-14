@@ -11,6 +11,7 @@ let ancient;
 let startFont;
 let play;
 let scroll;
+let board;
 
 // Game variables
 let pitRadius = 40;
@@ -33,6 +34,7 @@ function preload() {
   ancient = loadImage("ancient.avif");
   play = loadImage("play.png");
   scroll = loadImage("scroll.png");
+  board = loadImage("board.jpg");
 
   // Load font files
   //startFont = loadFont("MonsterFriendFore.otf");
@@ -132,7 +134,7 @@ function instructionScreen() {
 
 // Draw the Mancala game screen
 function drawGame() {
-  background("green");
+  image(board, 0, 0, windowWidth, windowHeight);
   drawBoard();
   if (isGameOver) {
     displayWinner();
