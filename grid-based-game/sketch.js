@@ -57,7 +57,7 @@ function swapState() {
   }
 
   else if (state === "play") {
-    // mancala board stuff draw game function
+    drawGame();
   }
 
 }
@@ -74,7 +74,7 @@ function startScreen() {
   
 }
 function keyPressed() {
-  if (key === " ") { //might have to add instructions thing
+  if (state === "instructions" && key === " ") { //might have to add instructions thing
     state = "play";
   }
 }
@@ -139,7 +139,7 @@ function drawGame() {
   }
 }
 
-// Function to draw the Mancala board
+// // Function to draw the Mancala board
 function drawBoard() {
   // Draw Top Player's pits (Player 1)
   for (let i = 0; i < 6; i++) {
@@ -152,14 +152,15 @@ function drawBoard() {
   }
 
   // Draw Stores
-  drawStore(50, 200, mancalaBoard[0][6], "P1");
-  drawStore(750, 200, mancalaBoard[1][6], "P2");
+  drawStore(43, 200, mancalaBoard[0][6], "P1");
+  drawStore(660, 200, mancalaBoard[1][6], "P2");
 
   // Display Player Turn
-  fill(0);
+  fill("black");
   textSize(20);
-  text(`Player ${playerTurn + 1}'s Turn`, width / 2, 30);
+  text(`Player ${playerTurn + 1}'s Turn`, 975, 300);
 }
+
 
 // Creates pits
 function drawPit(x, y, marbles) {
@@ -225,6 +226,35 @@ function distributeStones(row, index) {
   }
 
   checkForGameOver();
+}
+
+// Check if the game is over
+function checkForGameOver() {
+  let topRowEmpty = mancalaBoard[0].slice(0, 6).every(stone => stone === 0);
+  let bottomRowEmpty = mancalaBoard[1].slice(0, 6).every(stone => stone === 0);
+
+  if (topRowEmpty || bottomRowEmpty) {
+    isGameOver = true;
+    mancalaBoard[0][6] += mancalaBoard[0].slice(0, 6).reduce((a, b) => a + b, 0);
+    mancalaBoard[1][6] += mancalaBoard[1].slice(0, 6).reduce((a, b) => a + b, 0);
+    mancalaBoard[0].fill(0, 0, 6);
+    mancalaBoard[1].fill(0, 0, 6);
+  }
+}
+
+// Display the winner at the end of the game
+function displayWinner() {
+  fill(0);
+  textSize(32);
+  let winner;
+  if (mancalaBoard[0][6] > mancalaBoard[1][6]) {
+    winner = "Player 1 Wins!";
+  } else if (mancalaBoard[0][6] < mancalaBoard[1][6]) {
+    winner = "Player 2 Wins!";
+  } else {
+    winner = "It's a Tie!";
+  }
+  text(winner, width/2, 500);
 }
 
 
