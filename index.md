@@ -17,6 +17,7 @@
 - [Fireworks OOP](fireworks-oop)
 - [Connected Nodes OOP](nodes)
 - [Collide 2d Demo](collide)
+- [Inheritance Demo](inheritance)
 
 ## Projects
 - [Interactive Scene](interactive-scene)
