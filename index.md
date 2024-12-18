@@ -18,6 +18,8 @@
 - [Connected Nodes OOP](nodes)
 - [Collide 2d Demo](collide)
 - [Inheritance Demo](inheritance)
+- [Fractal Circles](fractal-circles)
+- [Sierpinksi Triangle](sierpinksi)
 
 ## Projects
 - [Interactive Scene](interactive-scene)
